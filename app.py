@@ -8,6 +8,7 @@ from utils import thread_killer
 class Bot(tk.Tk):
     def __init__(self):
         super().__init__()
+        pydirectinput.PAUSE = 0.001
         # VERSION
         self.VERSION = "1.0"
 
