@@ -9,7 +9,7 @@ def is_admin():
 
 def thread_killer(thread):
     thread_id = thread.ident
-    for _ in range(5):
+    while thread.is_alive():
         try:
             res = ctypes.pythonapi.PyThreadState_SetAsyncExc(ctypes.c_long(thread_id), ctypes.py_object(SystemExit))
             if res != 1:
